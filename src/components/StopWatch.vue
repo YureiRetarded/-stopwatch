@@ -1,5 +1,15 @@
 <template>
-    <span>{{h}}:{{m}}:{{s}}:{{ms}}</span>
+    <div>
+        <span v-if="d>0">{{d}}:</span>
+        <span v-if="h>10">{{h}}</span>
+        <span v-else>0{{h}}</span>
+        <span v-if="m>10">:{{m}}</span>
+        <span v-else>:0{{m}}</span>
+        <span v-if="s>10">:{{s}}</span>
+        <span v-else>:0{{s}}</span>
+        <span v-if="ms>10">:{{ms}}</span>
+        <span v-else>:0{{ms}}</span>
+    </div>
     <div>
         <button @click="StopWatch('start')">Start</button>
         <button @click="StopWatch('stop')">Stop</button>
@@ -25,23 +35,20 @@ export default {
                 this.ms++
                 
                 //ms
-                if(this.ms<=9){
-                    this.ms='0'+this.ms
-                }
-                if(this.ms>99){
+                if(this.ms>=99){
                     this.s++
                     this.ms=0
                 }
 
                 //s
-                if(this.s>60){
+                if(this.s>=60){
                     this.m++
                     this.s=0
                     this.ms=0
                 }
 
                 //m
-                if(this.m>60){
+                if(this.m>=60){
                     this.h++
                     this.m=0
                     this.s=0
@@ -49,7 +56,7 @@ export default {
                 }
 
                 //h
-                if(this.h>24){
+                if(this.h>=24){
                     this.d++
                     this.h=0
                     this.m=0
