@@ -1,15 +1,19 @@
 <template>
-    <div>
-        Здесь будет приложение
-    </div>
-    <stop-watch></stop-watch>
+    <control-stop-watches/>
+    
+    <stop-watch
+    v-for="n in $store.state.count"
+    />
+    
 
 </template>
 <script>
 import StopWatch from '@/components/StopWatch'
+import ControlStopWatches from '@/components/ControlStopWatches'
 export default {
     components:{
-        StopWatch
+        StopWatch,
+        ControlStopWatches
     },
     data(){
         return{
