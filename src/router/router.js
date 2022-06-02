@@ -1,10 +1,15 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import MainPage from '@/pages/mainpage'
+import StopWatchPage from '@/pages/stopwatchpage'
 
 const routes = [
   {
     path: '/',
     component: MainPage
+  },
+  {
+    path: '/stopwatch',
+    component: StopWatchPage
   }
 ]
 
