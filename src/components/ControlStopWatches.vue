@@ -1,8 +1,8 @@
 <template>
     <div>
+        <i @click="$store.commit('countPlus')" class="bi bi-plus-square"></i>
+        <i @click="$store.commit('countMinus')" class="bi bi-dash-square"></i>
         {{$store.state.count}}
-        <button @click="$store.commit('countPlus')">+</button>
-        <button @click="$store.commit('countMinus')">-</button>
     </div>
 </template>
 <script>
