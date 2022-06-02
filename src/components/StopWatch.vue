@@ -1,4 +1,5 @@
 <template>
+    {{stopwatch.title}}
     <div>
         <span v-if="d>0">{{d}}:</span>
         <span v-if="h>10">{{h}}</span>
@@ -26,6 +27,12 @@ export default {
             h:0,
             d:0,
             interval:''
+        }
+    },
+    props:{
+        stopwatch:{
+            type:Object,
+            requered:true
         }
     },
     methods: {

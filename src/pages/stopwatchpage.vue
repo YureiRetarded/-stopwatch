@@ -1,26 +1,27 @@
 <template lang="">
     <div>
         Страница с секундомерами
+    </div>
+    <div>
         <control-stop-watches/>
     </div>
-    <div class="container">
-        <stop-watch
-            v-for="n in $store.state.count"
-            :key="n"
-        />
+    <div>
+        <stop-watch-list/>
     </div>
 </template>
 <script>
-import StopWatch from '@/components/StopWatch'
+
+import StopWatchList from '@/components/StopWatchList'
 import ControlStopWatches from '@/components/ControlStopWatches'
 export default {
     components:{
-        StopWatch,
+        StopWatchList,
         ControlStopWatches
     },
     data(){
         return{
-
+            
+                
         }
     }
 }

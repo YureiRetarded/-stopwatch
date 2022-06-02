@@ -1,13 +1,22 @@
 <template>
     <div class="control-panel">
-        <button @click="$store.commit('countPlus')" class="bi bi-plus-square"></button>
-        <button @click="$store.commit('countMinus')" class="bi bi-dash-square"></button>
+        <button @click="createStopWatch" class="bi bi-plus-square"></button>
+        <button @click="removeStopWatch" class="bi bi-dash-square"></button>
         {{$store.state.count}}
     </div>
 </template>
 <script>
+import {mapMutations, mapActions} from "vuex"
 export default {
-    
+    methods:{
+        ...mapMutations({
+           
+        }),
+        ...mapActions({
+            createStopWatch:'stopwatch/createStopWatch',
+            removeStopWatch:'stopwatch/removeStopWatch'
+        })
+    },
 }
 </script>
 <style scoped lang="scss">

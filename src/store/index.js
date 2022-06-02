@@ -1,23 +1,8 @@
 import { createStore } from "vuex";
+import { stopwatchModule } from "@/store/stopwatchModule";
 
 export default createStore({
-    state:{
-        count:1
-    },
-    getters:{
-
-    },
-    mutations:{
-        countPlus(state){
-            state.count ++
-        },
-        countMinus(state){
-            if(state.count>1)
-            state.count --
-        }
-
-    },
-    actions:{
-         
+    modules:{
+        stopwatch:stopwatchModule
     }
 })
