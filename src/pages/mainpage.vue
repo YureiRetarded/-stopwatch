@@ -1,4 +1,5 @@
 <template>
+    Главная страница
     <control-stop-watches/>
     
     <stop-watch
