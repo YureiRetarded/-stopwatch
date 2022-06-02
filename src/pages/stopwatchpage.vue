@@ -3,11 +3,12 @@
         Страница с секундомерами
         <control-stop-watches/>
     </div>
-     
-    
-    <stop-watch
-    v-for="n in $store.state.count"
-    />
+    <div class="container">
+        <stop-watch
+            v-for="n in $store.state.count"
+            :key="n"
+        />
+    </div>
 </template>
 <script>
 import StopWatch from '@/components/StopWatch'
