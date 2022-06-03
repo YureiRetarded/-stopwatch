@@ -57,6 +57,7 @@ export default {
     .control-panel{
         display: flex;
         justify-content: space-between;
+        margin-bottom: 20px;
     }
     .row-list{
         margin: 5px 0 5px 0;

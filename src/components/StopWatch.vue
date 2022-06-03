@@ -1,25 +1,30 @@
 <template>
     <div class="col">
         <div class="card">
-            <div>
-                <input type="text" placeholder="StopWatch">
-            </div>
-            <div>
-                <span v-if="d>0">{{d}}:</span>
-                <span v-if="h>10">{{h}}</span>
-                <span v-else>0{{h}}</span>
-                <span v-if="m>10">:{{m}}</span>
-                <span v-else>:0{{m}}</span>
-                <span v-if="s>10">:{{s}}</span>
-                <span v-else>:0{{s}}</span>
-                <span v-if="ms>10">:{{ms}}</span>
-                <span v-else>:0{{ms}}</span>
-            </div>
-            <div>
-                <button @click="StopWatch('start')">Start</button>
-                <button @click="StopWatch('stop')">Stop</button>
-                <button @click="StopWatch('reset')">Reset</button>
-                <button @click="removeCurrentStopWatch(stopwatch.id)">Удалить</button>
+            <div class="row">
+                <div class="title">
+                    <input type="text" placeholder="StopWatch">
+                </div>
+                <div class="time">
+                    <span v-if="d>0">{{d}}:</span>
+                    <span v-if="h>10">{{h}}</span>
+                    <span v-else>0{{h}}</span>
+                    <span v-if="m>10">:{{m}}</span>
+                    <span v-else>:0{{m}}</span>
+                    <span v-if="s>10">:{{s}}</span>
+                    <span v-else>:0{{s}}</span>
+                    <span v-if="ms>10">:{{ms}}</span>
+                    <span v-else>:0{{ms}}</span>
+                </div>
+                <div class="panel">
+                    <div class="btn-group" role="group" aria-label="button-group">
+                        <button type="button" class="btn btn-dark bi bi-caret-right" @click="StopWatch('start')"></button>
+                        <button type="button" class="btn btn-dark bi bi-pause" @click="StopWatch('stop')"></button>
+                        <button type="button" class="btn btn-dark bi bi-bootstrap-reboot" @click="StopWatch('reset')"></button>
+                        <button type="button" class="btn btn-dark bi bi-trash" @click="removeCurrentStopWatch(stopwatch.id)"></button>
+                    </div>
+                   
+                </div>
             </div>
         </div>
     </div>
@@ -114,5 +119,22 @@ export default {
 <style scoped lang="scss">
 .card{
     min-width: 210px;
+
+}
+.title>input{
+    width: 100%;
+    border: none;
+    text-align: center;
+}
+.time{
+    font-size: 1.5em;
+    text-align: center;
+}
+.panel{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
 }
 </style>
