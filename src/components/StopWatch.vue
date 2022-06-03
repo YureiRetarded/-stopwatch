@@ -1,5 +1,6 @@
 <template>
-    <div>
+    <div class="card col">
+        <div>
         <input type="text" placeholder="StopWatch">
     </div>
     <div>
@@ -18,6 +19,7 @@
         <button @click="StopWatch('stop')">Stop</button>
         <button @click="StopWatch('reset')">Reset</button>
         <button @click="removeCurrentStopWatch(stopwatch.id)">Удалить</button>
+    </div>
     </div>
 </template>
 <script>
@@ -107,6 +109,8 @@ export default {
 }
 
 </script>
-<style scoped>
-    
+<style scoped lang="scss">
+.card{
+    min-width: 210px;
+}
 </style>

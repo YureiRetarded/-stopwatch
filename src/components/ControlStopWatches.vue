@@ -2,7 +2,7 @@
     <div class="control-panel">
         <button @click="createStopWatch" class="bi bi-plus-square"></button>
         <button @click="removeStopWatch" class="bi bi-dash-square"></button>
-        {{$store.state.count}}
+        {{$store.state.stopwatch.stopwatches.length}}
     </div>
 </template>
 <script>
