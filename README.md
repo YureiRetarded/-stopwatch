@@ -3,12 +3,14 @@
 Ducktime это сборник более мелких проектов по работе со временем.
 На данный момент есть следующие продукты:
 1. StopWatch
+<br>
 Более подробное описание проектов ниже.
 
 ## ENG
 Ducktime is a collection of smaller project of work with time.
 We currently have the following products:
 1. StopWatch
+<br>
 More detailed description of the projects below.
 
 
