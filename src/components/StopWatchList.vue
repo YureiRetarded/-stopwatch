@@ -1,16 +1,20 @@
 <template lang>
     <div>
-        <control-grid  @update="ChangeType"/>
+        <div class="container control-panel">
+            <control-stop-watches/>
+            <control-grid  @update="ChangeType"/>
+
+        </div>
         <div class="container">
             <div v-if="type_grid=='LIST'">
-                <stop-watch class="row"
+                <stop-watch class="row" style="margin-bottom:10px;"
                     v-for="sw in stopwatches"
                     :stopwatch="sw"
                     :key="sw.id"
                 />
             </div>
             <div v-else-if="type_grid=='GRID'">
-                <div class="row">
+                <div class="row g-3">
                     <stop-watch
                     v-for="sw in stopwatches"
                     :stopwatch="sw"
@@ -22,13 +26,15 @@
     </div>
 </template>
 <script>
+import ControlStopWatches from '@/components/ControlStopWatches'
 import StopWatch from '@/components/StopWatch'
 import ControlGrid from '@/components/ControlGrid'
 import {mapState} from "vuex"
 export default {
     components:{
         StopWatch,
-        ControlGrid
+        ControlGrid,
+        ControlStopWatches
     },
     data(){
         return{
@@ -47,6 +53,9 @@ export default {
     }
 }
 </script>
-<style>
-    
+<style scoped lang="scss">
+    .control-panel{
+        display: flex;
+        justify-content: space-between;
+    }
 </style>

@@ -21,7 +21,7 @@ export default {
 </script>
 <style scoped lang="scss">
 .control-panel{
-    font-size: 3em;
+    font-size: 2em;
     button{
         border: none;
         background-color: white;
