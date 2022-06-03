@@ -7,7 +7,7 @@
         </div>
         <div class="container">
             <div v-if="type_grid=='LIST'">
-                <stop-watch class="row" style="margin-bottom:10px;"
+                <stop-watch class="row row-list"
                     v-for="sw in stopwatches"
                     :stopwatch="sw"
                     :key="sw.id"
@@ -57,5 +57,8 @@ export default {
     .control-panel{
         display: flex;
         justify-content: space-between;
+    }
+    .row-list{
+        margin: 5px 0 5px 0;
     }
 </style>

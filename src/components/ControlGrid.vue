@@ -1,7 +1,7 @@
 <template>
-<div class="control-panel">
-    <button class="bi bi-columns-gap" @click="ChangeType('GRID')"></button>
-    <button class="bi bi-view-stacked" @click="ChangeType('LIST')"></button>
+<div class="control-panel btn-group" role="group" aria-label="button-group">
+    <button type="button" class="btn btn-dark bi bi-columns-gap" @click="ChangeType('GRID')"></button>
+    <button type="button" class="btn btn-dark bi bi-view-stacked" @click="ChangeType('LIST')"></button>
 </div>
     
 </template>
@@ -20,13 +20,4 @@ export default {
 }
 </script>
 <style scoped lang="scss">
-.control-panel{
-    font-size: 2em;
-    vertical-align: middle;
-    button{
-        border: none;
-        background-color: white;
-        padding: 0;
-    }
-}
 </style>
