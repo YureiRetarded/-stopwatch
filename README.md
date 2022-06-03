@@ -6,7 +6,7 @@ Ducktime это сборник более мелких проектов по р�
 Более подробное описание проектов ниже.
 
 ## ENG
-Ducktime is a collection of smaller time management projects.
+Ducktime is a collection of smaller project of work with time.
 We currently have the following products:
 1. StopWatch
 More detailed description of the projects below.
