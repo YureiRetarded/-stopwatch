@@ -1,4 +1,5 @@
 <template>
+    <div>Название:{{title}}</div>
     {{stopwatch.title}}
     <div>
         <span v-if="d>0">{{d}}:</span>
@@ -15,12 +16,16 @@
         <button @click="StopWatch('start')">Start</button>
         <button @click="StopWatch('stop')">Stop</button>
         <button @click="StopWatch('reset')">Reset</button>
+        <button @click="removeCurrentStopWatch(stopwatch.id)">Удалить</button>
     </div>
 </template>
 <script>
+import {mapMutations, mapActions} from "vuex"
 export default {
+    
     data(){
         return{
+            title:'StopWatch',
             ms:0,
             s:0,
             m:0,
@@ -36,6 +41,10 @@ export default {
         }
     },
     methods: {
+        ...mapActions({
+            removeCurrentStopWatch:'stopwatch/removeCurrentStopWatch',
+            CurrentStopWatch:'stopwatch/CurrentStopWatch',
+        }),
         StopWatch(action){
             try{
                 let startStopWatch = () =>{

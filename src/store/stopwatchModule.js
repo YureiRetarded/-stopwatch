@@ -5,7 +5,7 @@ export const stopwatchModule = {
         ]
     }),
     getters:{
-
+        
     },
     mutations:{
         setSW(state,sw){
@@ -23,7 +23,12 @@ export const stopwatchModule = {
             let array=state.stopwatches
             array.splice(array.length-1, 1)
             commit('setSW',array)
-        }
+        },
+        removeCurrentStopWatch({state,commit},id_sw){
+            let array=state.stopwatches
+            array.splice(array.findIndex((obj)=>{return obj.id==id_sw}), 1)
+            commit('setSW',array)
+        },
     },
     namespaced:true
 }
