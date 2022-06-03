@@ -1,6 +1,7 @@
 <template>
-    <div>Название:{{title}}</div>
-    {{stopwatch.title}}
+    <div>
+        <input type="text" placeholder="StopWatch">
+    </div>
     <div>
         <span v-if="d>0">{{d}}:</span>
         <span v-if="h>10">{{h}}</span>
@@ -25,7 +26,6 @@ export default {
     
     data(){
         return{
-            title:'StopWatch',
             ms:0,
             s:0,
             m:0,
