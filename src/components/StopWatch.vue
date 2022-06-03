@@ -7,13 +7,13 @@
                 </div>
                 <div class="time">
                     <span v-if="d>0">{{d}}:</span>
-                    <span v-if="h>10">{{h}}</span>
+                    <span v-if="h>=10">{{h}}</span>
                     <span v-else>0{{h}}</span>
-                    <span v-if="m>10">:{{m}}</span>
+                    <span v-if="m>=10">:{{m}}</span>
                     <span v-else>:0{{m}}</span>
-                    <span v-if="s>10">:{{s}}</span>
+                    <span v-if="s>=10">:{{s}}</span>
                     <span v-else>:0{{s}}</span>
-                    <span v-if="ms>10">:{{ms}}</span>
+                    <span v-if="ms>=10">:{{ms}}</span>
                     <span v-else>:0{{ms}}</span>
                 </div>
                 <div class="panel">
