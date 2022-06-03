@@ -154,6 +154,9 @@ export default {
     .time{
         margin:0 0 20px 0 ;
         font-size: 3em;
+        @media screen and (max-width:300px) {
+            font-size: 2.5em;
+        }
     }
     .panel{
         .btn-group{
@@ -167,51 +170,67 @@ export default {
     padding: 0;
     
     .row{
-    }
-    .title>input{
-        font-size: 1.5em;
-    }
-    .time{
-        
-        font-size: 1.5em;
-    }
-    .panel{
-        margin-top: 10px;
-        .btn-group{
-            button.btn{
-                font-size: 1em;
+        .title>input{
+            font-size: 1.5em;
+        }
+        .time{
+            font-size: 1.5em;
+        }
+        .panel{
+            margin-top: 10px;
+            .btn-group{
+                button.btn{
+                    font-size: 1em;
                 }
+            }
         }
     }
+    
 }
 .container.SMALL .row-list>.card{
     padding: 0;
     .row{
         display: flex;
         flex-direction: row;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         justify-content:space-between;
         align-items: center;
-    }
-    .title{
-        width: auto;
-    }
-    .title>input{
-        width: auto;
-        font-size: 1em;
-    }
-    .time{
-        width: auto;
-        font-size: 1.5em;
-    }
-    .panel{
-        width: auto;
-        .btn-group{
-            button.btn{
-                font-size: 1em;
+
+        .title{
+            width: auto;
+        }
+        .title>input{
+            width: auto;
+            font-size: 1em;
+        }
+        .time{
+            width: auto;
+            font-size: 1.5em;
+        }
+        .panel{
+            width: auto;
+            .btn-group{
+                button.btn{
+                    font-size: 1em;
                 }
+            }
+        }
+        @media screen and (max-width:770px) {
+            .title, .time, .panel{
+                width: 165px;
+            }
+        }
+        @media screen and (max-width:520px) {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content:center;
+            .title,.title>input, .time, .panel{
+                width: 100%;
+            }
         }
     }
+    
 }
 
 </style>
