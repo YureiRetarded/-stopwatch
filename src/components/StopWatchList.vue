@@ -15,7 +15,7 @@
             </div>
             <div v-else-if="type_grid=='GRID'">
                 <div class="row g-3">
-                    <stop-watch
+                    <stop-watch class="row-grid"
                     v-for="sw in stopwatches"
                     :stopwatch="sw"
                     :key="sw.id"

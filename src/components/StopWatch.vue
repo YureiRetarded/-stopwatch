@@ -3,7 +3,7 @@
         <div class="card">
             <div class="row">
                 <div class="title">
-                    <input type="text" placeholder="StopWatch">
+                    <input type="text" placeholder="Stopwatch">
                 </div>
                 <div class="time">
                     <span v-if="d>0">{{d}}:</span>
@@ -117,24 +117,51 @@ export default {
 
 </script>
 <style scoped lang="scss">
+
 .card{
     min-width: 210px;
+    .title>input{
+        width: 100%;
+        border: none;
+        text-align: center;
+        outline: none;
+    }
+    .time{
+        text-align: center;
+    }
+    .panel{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+.row-grid>.card{
+    .title>input{
 
+    }
+    .time{
+        font-size: 1.5em;
+    }
+    .panel{
+        margin-top: 10px;
+    }
 }
-.title>input{
-    width: 100%;
-    border: none;
-    text-align: center;
+.row-list>.card{
+    padding: 0;
+    .title>input{
+        font-size: 2.5em;
+    }
+    .time{
+        margin:0 0 20px 0 ;
+        font-size: 3em;
+    }
+    .panel{
+        .btn-group{
+            button.btn{
+                font-size: 1.4em;
+                }
+        }
+    }
 }
-.time{
-    font-size: 1.5em;
-    text-align: center;
-}
-.panel{
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 
-}
 </style>
