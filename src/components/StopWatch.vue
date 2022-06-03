@@ -1,24 +1,33 @@
 <template>
-    {{stopwatch.title}}
-    <div>
-        <span v-if="d>0">{{d}}:</span>
-        <span v-if="h>10">{{h}}</span>
-        <span v-else>0{{h}}</span>
-        <span v-if="m>10">:{{m}}</span>
-        <span v-else>:0{{m}}</span>
-        <span v-if="s>10">:{{s}}</span>
-        <span v-else>:0{{s}}</span>
-        <span v-if="ms>10">:{{ms}}</span>
-        <span v-else>:0{{ms}}</span>
-    </div>
-    <div>
-        <button @click="StopWatch('start')">Start</button>
-        <button @click="StopWatch('stop')">Stop</button>
-        <button @click="StopWatch('reset')">Reset</button>
+    <div class="col">
+        <div class="card">
+            <div>
+                <input type="text" placeholder="StopWatch">
+            </div>
+            <div>
+                <span v-if="d>0">{{d}}:</span>
+                <span v-if="h>10">{{h}}</span>
+                <span v-else>0{{h}}</span>
+                <span v-if="m>10">:{{m}}</span>
+                <span v-else>:0{{m}}</span>
+                <span v-if="s>10">:{{s}}</span>
+                <span v-else>:0{{s}}</span>
+                <span v-if="ms>10">:{{ms}}</span>
+                <span v-else>:0{{ms}}</span>
+            </div>
+            <div>
+                <button @click="StopWatch('start')">Start</button>
+                <button @click="StopWatch('stop')">Stop</button>
+                <button @click="StopWatch('reset')">Reset</button>
+                <button @click="removeCurrentStopWatch(stopwatch.id)">Удалить</button>
+            </div>
+        </div>
     </div>
 </template>
 <script>
+import {mapMutations, mapActions} from "vuex"
 export default {
+    
     data(){
         return{
             ms:0,
@@ -36,6 +45,10 @@ export default {
         }
     },
     methods: {
+        ...mapActions({
+            removeCurrentStopWatch:'stopwatch/removeCurrentStopWatch',
+            CurrentStopWatch:'stopwatch/CurrentStopWatch',
+        }),
         StopWatch(action){
             try{
                 let startStopWatch = () =>{
@@ -98,6 +111,8 @@ export default {
 }
 
 </script>
-<style scoped>
-    
+<style scoped lang="scss">
+.card{
+    min-width: 210px;
+}
 </style>

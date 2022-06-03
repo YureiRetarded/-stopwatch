@@ -1,8 +1,8 @@
 <template>
-    <div class="control-panel">
-        <button @click="createStopWatch" class="bi bi-plus-square"></button>
-        <button @click="removeStopWatch" class="bi bi-dash-square"></button>
-        {{$store.state.count}}
+    <div class="control-panel btn-group" role="group" aria-label="button-group">
+        <button type="button" @click="createStopWatch" class="btn btn-dark bi bi-plus-lg"></button>
+        <button type="button" @click="removeStopWatch" class="btn btn-dark bi bi-dash-lg"></button>
+        <div class="btn btn-dark">{{$store.state.stopwatch.stopwatches.length}}</div>
     </div>
 </template>
 <script>
@@ -20,12 +20,11 @@ export default {
 }
 </script>
 <style scoped lang="scss">
-.control-panel{
-    font-size: 3em;
-    button{
-        border: none;
-        background-color: white;
-        padding: 0;
+    div.btn.btn-dark{
+        &:hover{
+            background-color: #212529;
+            border-color: #212529;
+            cursor: default;
+        }
     }
-}
 </style>
