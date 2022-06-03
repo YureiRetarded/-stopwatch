@@ -6,12 +6,9 @@
     </div>
 </template>
 <script>
-import {mapMutations, mapActions} from "vuex"
+import {mapActions} from "vuex"
 export default {
     methods:{
-        ...mapMutations({
-           
-        }),
         ...mapActions({
             createStopWatch:'stopwatch/createStopWatch',
             removeStopWatch:'stopwatch/removeStopWatch'

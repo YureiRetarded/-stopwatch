@@ -3,6 +3,7 @@
     <button type="button" class="btn btn-dark bi bi-columns-gap" @click="ChangeType('GRID')"></button>
     <button type="button" class="btn btn-dark bi bi-view-stacked" @click="ChangeType('LIST')"></button>
 </div>
+
     
 </template>
 <script>

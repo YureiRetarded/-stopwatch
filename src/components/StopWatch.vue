@@ -1,25 +1,30 @@
 <template>
     <div class="col">
         <div class="card">
-            <div>
-                <input type="text" placeholder="StopWatch">
-            </div>
-            <div>
-                <span v-if="d>0">{{d}}:</span>
-                <span v-if="h>10">{{h}}</span>
-                <span v-else>0{{h}}</span>
-                <span v-if="m>10">:{{m}}</span>
-                <span v-else>:0{{m}}</span>
-                <span v-if="s>10">:{{s}}</span>
-                <span v-else>:0{{s}}</span>
-                <span v-if="ms>10">:{{ms}}</span>
-                <span v-else>:0{{ms}}</span>
-            </div>
-            <div>
-                <button @click="StopWatch('start')">Start</button>
-                <button @click="StopWatch('stop')">Stop</button>
-                <button @click="StopWatch('reset')">Reset</button>
-                <button @click="removeCurrentStopWatch(stopwatch.id)">Удалить</button>
+            <div class="row">
+                <div class="title">
+                    <input type="text" placeholder="Stopwatch">
+                </div>
+                <div class="time">
+                    <span v-if="d>0">{{d}}:</span>
+                    <span v-if="h>10">{{h}}</span>
+                    <span v-else>0{{h}}</span>
+                    <span v-if="m>10">:{{m}}</span>
+                    <span v-else>:0{{m}}</span>
+                    <span v-if="s>10">:{{s}}</span>
+                    <span v-else>:0{{s}}</span>
+                    <span v-if="ms>10">:{{ms}}</span>
+                    <span v-else>:0{{ms}}</span>
+                </div>
+                <div class="panel">
+                    <div class="btn-group" role="group" aria-label="button-group">
+                        <button type="button" class="btn btn-dark bi bi-caret-right" @click="StopWatch('start')"></button>
+                        <button type="button" class="btn btn-dark bi bi-pause" @click="StopWatch('stop')"></button>
+                        <button type="button" class="btn btn-dark bi bi-bootstrap-reboot" @click="StopWatch('reset')"></button>
+                        <button type="button" class="btn btn-dark bi bi-trash" @click="removeCurrentStopWatch(stopwatch.id)"></button>
+                    </div>
+                   
+                </div>
             </div>
         </div>
     </div>
@@ -112,7 +117,101 @@ export default {
 
 </script>
 <style scoped lang="scss">
+
 .card{
     min-width: 210px;
+    .title>input{
+        width: 100%;
+        border: none;
+        text-align: center;
+        outline: none;
+    }
+    .time{
+        text-align: center;
+    }
+    .panel{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }
+.row-grid>.card{
+    .title>input{
+        font-size: 1.5em;
+    }
+    .time{
+        font-size: 1.5em;
+    }
+    .panel{
+        margin-top: 10px;
+    }
+}
+.container.BIG .row-list>.card{
+    padding: 0;
+    .title>input{
+        font-size: 2.5em;
+    }
+    .time{
+        margin:0 0 20px 0 ;
+        font-size: 3em;
+    }
+    .panel{
+        .btn-group{
+            button.btn{
+                font-size: 1.4em;
+                }
+        }
+    }
+}
+.container.MIDDLE .row-list>.card{
+    padding: 0;
+    
+    .row{
+    }
+    .title>input{
+        font-size: 1.5em;
+    }
+    .time{
+        
+        font-size: 1.5em;
+    }
+    .panel{
+        margin-top: 10px;
+        .btn-group{
+            button.btn{
+                font-size: 1em;
+                }
+        }
+    }
+}
+.container.SMALL .row-list>.card{
+    padding: 0;
+    .row{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content:space-between;
+        align-items: center;
+    }
+    .title{
+        width: auto;
+    }
+    .title>input{
+        width: auto;
+        font-size: 1em;
+    }
+    .time{
+        width: auto;
+        font-size: 1.5em;
+    }
+    .panel{
+        width: auto;
+        .btn-group{
+            button.btn{
+                font-size: 1em;
+                }
+        }
+    }
+}
+
 </style>
