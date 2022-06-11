@@ -3,7 +3,7 @@
         <div class="card">
             <div class="row">
                 <div class="title">
-                    <input type="text" placeholder="Stopwatch">
+                    <input type="text" placeholder="Stopwatch" @change='changeT' :value="stopwatch.title"/>
                 </div>
                 <div class="time">
                     <span v-if="d>0">{{d}}:</span>
@@ -23,7 +23,6 @@
                         <button type="button" class="btn btn-dark bi bi-bootstrap-reboot" @click="StopWatch('reset')"></button>
                         <button type="button" class="btn btn-dark bi bi-trash" @click="removeCurrentStopWatch(stopwatch.id)"></button>
                     </div>
-                   
                 </div>
             </div>
         </div>
@@ -50,15 +49,27 @@ export default {
         }
     },
     methods: {
+        changeT(e){
+            let dataObj={id:this.stopwatch.id,
+                        title:e.target.value
+                    }
+            this.changeTitleStopWatch(dataObj)
+            },
         ...mapActions({
             removeCurrentStopWatch:'stopwatch/removeCurrentStopWatch',
             CurrentStopWatch:'stopwatch/CurrentStopWatch',
+            changeTitleStopWatch:'stopwatch/changeTitleStopWatch'
         }),
         StopWatch(action){
             try{
                 let startStopWatch = () =>{
-                this.ms++
-                
+                if(document.visibilityState!="hidden"){
+                    this.ms++
+                }
+                else{
+                    this.s++
+                }
+
                 //ms
                 if(this.ms>=99){
                     this.s++
@@ -108,7 +119,7 @@ export default {
             }
             }
             catch{
-
+                alert('Something is wrong...');
             }
             
         }

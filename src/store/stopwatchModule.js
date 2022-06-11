@@ -29,6 +29,12 @@ export const stopwatchModule = {
             array.splice(array.findIndex((obj)=>{return obj.id==id_sw}), 1)
             commit('setSW',array)
         },
+        changeTitleStopWatch({state,commit},data){
+            let array=state.stopwatches
+            let id = array.findIndex((obj)=>{return obj.id==data.id})
+            array[id].title=data.title
+            commit('setSW',array)
+        }
     },
     namespaced:true
 }
